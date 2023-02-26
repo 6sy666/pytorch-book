@@ -25,7 +25,7 @@ class Config(object):
     # Train Args
     image_size = 256 # image crop_size for training
     batch_size = 8  
-    data_root = '/content/drive/MyDrive/data/' # dataset root：$data_root/coco/a.jpg
+    data_root = '/content/drive/MyDrive/data1/' # dataset root：$data_root/coco/a.jpg
     num_workers = 4 # dataloader num of workers
     
     lr = 1e-3
@@ -93,7 +93,7 @@ def train(**kwargs):
     content_meter = tnt.meter.AverageValueMeter()
 
     for epoch in range(opt.epoches):
-        print("EPOCH:"+epoch+"!!!!")
+        print("EPOCH:"+str(epoch)+"!!!!")
         content_meter.reset()
         style_meter.reset()
 
