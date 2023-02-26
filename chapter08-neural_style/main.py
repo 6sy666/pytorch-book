@@ -25,7 +25,7 @@ class Config(object):
     # Train Args
     image_size = 256 # image crop_size for training
     batch_size = 8  
-    data_root = 'data/' # dataset root：$data_root/coco/a.jpg
+    data_root = '/content/drive/MyDrive/data/' # dataset root：$data_root/coco/a.jpg
     num_workers = 4 # dataloader num of workers
     
     lr = 1e-3
@@ -33,7 +33,7 @@ class Config(object):
     content_weight = 1e5 # weight of content_loss  
     style_weight = 1e10 # weight of style_loss
 
-    style_path= 'style.jpg' # style image path
+    style_path= '/content/pytorch-book/chapter08-neural_style/style.jpg' # style image path
     env = 'neural-style' # visdom env
     plot_every = 10 # visualize in visdom for every 10 batch
 
@@ -93,6 +93,7 @@ def train(**kwargs):
     content_meter = tnt.meter.AverageValueMeter()
 
     for epoch in range(opt.epoches):
+        print("EPOCH:"+epoch+"!!!!")
         content_meter.reset()
         style_meter.reset()
 
